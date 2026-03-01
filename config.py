@@ -9,7 +9,7 @@ BOT_TOKEN = os.getenv('BOT_TOKEN')
 # Port configuration for deployment
 PORT = int(os.getenv('PORT', 10000))
 
-# Message templates (Correction: Nommé GREETING_MESSAGE pour correspondre aux handlers)
+# Message templates
 GREETING_MESSAGE = """
 👋 Bienvenue dans la communauté des développeurs !
 
@@ -25,6 +25,9 @@ Commandes disponibles :
 🎯 **Système de prédiction de cartes automatique :**
 Le bot analyse automatiquement vos messages de jeu et fait des prédictions quand il détecte 3 cartes différentes !
 """
+
+# Indispensable pour handlers.py
+WELCOME_MESSAGE = GREETING_MESSAGE 
 
 HELP_MESSAGE = """
 🆘 **Aide - Joker's Bot**
@@ -58,12 +61,6 @@ ABOUT_MESSAGE = """
 ✅ Gestion des nouveaux membres
 ✅ Limitation de débit anti-spam
 ✅ Statistiques de prédiction en temps réel
-✅ Architecture modulaire et extensible
-
-**Déploiement :** Optimisé pour Render
-**Port :** 10000 (configurable)
-
-🔧 Bot opensource développé spécialement pour cette communauté
 """
 
 DEV_MESSAGE = """
@@ -73,25 +70,15 @@ DEV_MESSAGE = """
 • Python 3.11 + asyncio
 • python-telegram-bot v20.7
 • Architecture modulaire événementielle
-• Logging complet (fichier + console)
-
-**Modules :**
-• `bot.py` - Contrôleur principal
-• `handlers.py` - Gestionnaires d'événements
-• `card_predictor.py` - Système de prédiction
-• `config.py` - Configuration centralisée
 
 **Variables d'environnement :**
 • `BOT_TOKEN` - Token du bot Telegram (requis)
 • `PORT` - Port d'écoute (défaut: 10000)
-
-**Déploiement :**
-Optimisé pour Render avec support complet des workflows.
 """
 
-# Rate limiting settings
-RATE_LIMIT_MESSAGES = 5
-RATE_LIMIT_WINDOW = 60  # seconds
+# --- CONFIGURATION DU RATE LIMITING (REQUIS PAR HANDLERS.PY) ---
+MAX_MESSAGES_PER_MINUTE = 5
+RATE_LIMIT_WINDOW = 60 
 
 # Prediction system settings
 VALID_CARD_SYMBOLS = ['♠️', '♥️', '♣️', '♦️']
