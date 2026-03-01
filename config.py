@@ -9,8 +9,8 @@ BOT_TOKEN = os.getenv('BOT_TOKEN')
 # Port configuration for deployment
 PORT = int(os.getenv('PORT', 10000))
 
-# Message templates
-WELCOME_MESSAGE = """
+# Message templates (Correction: Nommé GREETING_MESSAGE pour correspondre aux handlers)
+GREETING_MESSAGE = """
 👋 Bienvenue dans la communauté des développeurs !
 
 Je suis Joker, votre bot assistant pour ce groupe de 3K développeurs.
@@ -60,7 +60,7 @@ ABOUT_MESSAGE = """
 ✅ Statistiques de prédiction en temps réel
 ✅ Architecture modulaire et extensible
 
-**Déploiement :** Optimisé pour Replit
+**Déploiement :** Optimisé pour Render
 **Port :** 10000 (configurable)
 
 🔧 Bot opensource développé spécialement pour cette communauté
@@ -86,9 +86,7 @@ DEV_MESSAGE = """
 • `PORT` - Port d'écoute (défaut: 10000)
 
 **Déploiement :**
-Optimisé pour Replit avec support complet des workflows.
-
-Code source disponible dans ce projet.
+Optimisé pour Render avec support complet des workflows.
 """
 
 # Rate limiting settings
